@@ -39,7 +39,6 @@ def convert_rss_to_ical(rss_url):
 
         # Create a Flask response with the ICS data
         response = Response(ical_data, content_type='text/calendar')
-        response.headers['Content-Disposition'] = 'attachment; filename="calendar.ics"'
         return response
 
     except Exception as e:
