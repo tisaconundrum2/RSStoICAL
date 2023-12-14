@@ -1,2 +1,2 @@
 # RSStoICAL
-And easy process to iCal flask implementation.
+And easy RSS to iCal flask implementation.
