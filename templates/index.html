@@ -4,13 +4,12 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
-
-  <title>Signin Template for Bootstrap</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  
+  <title>Meetup RSS to iCal</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
@@ -19,28 +18,31 @@
   <link href="{{ url_for('static', filename='signin.css') }}" rel="stylesheet">
 </head>
 
-<body class="text-center">
-  <form class="form-signin">
-    <img class="mb-4" src="{{ url_for('static', filename='bootstrap-solid.svg') }}" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
+<body class="text-center" style="background-color: #c0d7e4;">
+  <div class="container">
+
+    <form class="form-signin">
+      <img class="mb-4" src="{{ url_for('static', filename='logo.png') }}" alt="" width="100" height="100">
+      <h1 class="h3 mb-3 font-weight-normal">Paste your URL</h1>
+      <label for="rssURL" class="sr-only">RSS URL</label>
+      <input type="url" id="inputUrl" class="form-control" placeholder="RSS URL" required="" autofocus="">
+      <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Go</button>
+    </form>
+
+    <div class="input-group" style="max-width: 330px; padding: 15px; margin: 0 auto;">
+      <input type="text" class="form-control" value="" placeholder="Paste your link and press Go" id="copy-input"
+        disabled>
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" id="copy-button" data-toggle="tooltip" data-placement="bottom"
+          title="" data-original-title="Copy to Clipboard">
+          Copy
+        </button>
+      </span>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
-  </form>
 
+  </div>
+</body>
 
-</body><auto-scroll><template shadowrootmode="closed">
-    <div
-      style="transform: translateZ(0px); display: none; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 2147483647; background-repeat: no-repeat;">
-    </div>
-  </template></auto-scroll>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </html>
