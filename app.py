@@ -1,4 +1,4 @@
-from flask import Flask, request, Response
+from flask import Flask, Response, render_template
 import feedparser
 from icalendar import Calendar, Event
 from datetime import datetime
@@ -44,6 +44,10 @@ def convert_rss_to_ical(rss_url):
 
     except Exception as e:
         return str(e), 500
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
